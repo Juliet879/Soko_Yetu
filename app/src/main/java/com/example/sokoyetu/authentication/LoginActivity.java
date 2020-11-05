@@ -1,4 +1,4 @@
-package com.example.sokoyetu;
+package com.example.sokoyetu.authentication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,19 +9,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sokoyetu.ui.MainActivity;
+import com.example.sokoyetu.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = LoginActivity.class.getSimpleName();
@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthProgressDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +58,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         };
 
-
         mRegisterTextView.setOnClickListener(this);
         mPasswordLoginButton.setOnClickListener(this);
 
@@ -80,6 +78,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+
     private void createAuthProgressDialog() {
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle("Loading...");
@@ -94,7 +93,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mEmailEditText.setError("Please enter your email");
             return;
         }
-
         if (password.equals("")) {
             mPasswordEditText.setError("Password cannot be blank");
             return;
