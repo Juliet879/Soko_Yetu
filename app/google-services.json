@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "707002252263",
-    "firebase_url": "https://soko-yetu-fc0e8.firebaseio.com",
-    "project_id": "soko-yetu-fc0e8",
-    "storage_bucket": "soko-yetu-fc0e8.appspot.com"
+    "project_number": "42605995778",
+    "firebase_url": "https://soko-yetu-5f2da.firebaseio.com",
+    "project_id": "soko-yetu-5f2da",
+    "storage_bucket": "soko-yetu-5f2da.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:707002252263:android:6c742e7ca1824b15eb5b42",
+        "mobilesdk_app_id": "1:42605995778:android:fe24ac1581e4ac9877041b",
         "android_client_info": {
           "package_name": "com.example.sokoyetu"
         }
       },
       "oauth_client": [
         {
-          "client_id": "707002252263-rtooq7knh3ubmivl0uisaeqqsioq6dlp.apps.googleusercontent.com",
+          "client_id": "42605995778-i4p1v597sf32an95esaln6i6vvh49dde.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.sokoyetu",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "707002252263-0qjode9f6e764ufgfodqqd83bsid29tq.apps.googleusercontent.com",
+          "client_id": "42605995778-94q3lfj3kl7e46c87kqt562lv9mr5sab.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBtWTVAvQdM902866qjBBqPbaPV0uRKbhY"
+          "current_key": "AIzaSyBQDXEEE75mv2aw3zFmbFORx47nIqK8cdM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "707002252263-0qjode9f6e764ufgfodqqd83bsid29tq.apps.googleusercontent.com",
+              "client_id": "42605995778-94q3lfj3kl7e46c87kqt562lv9mr5sab.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
