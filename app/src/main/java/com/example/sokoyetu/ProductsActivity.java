@@ -10,4 +10,8 @@ public class ProductsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
     }
+
+    InfoApi client = InfoClient.getClient();
+
+    Call<InfoBuySearchResponse> call = client.getProducts(product, "product")
 }

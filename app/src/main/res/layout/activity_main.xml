@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/ProductEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/findButton"
         android:layout_width="204dp"
         android:layout_height="46dp"
         android:background="#835818"
@@ -115,5 +115,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/ProductEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
