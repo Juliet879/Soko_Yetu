@@ -1,5 +1,7 @@
 package com.example.sokoyetu;
 
+import com.example.sokoyetu.models.InfoBuySearchResponse;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

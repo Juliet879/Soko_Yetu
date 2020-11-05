@@ -22,13 +22,12 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mFindButton;
-    private EditText mProductEditText;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
 
     @BindView(R.id.findButton) Button mFindButtonv;
-    @BindView(R.id.productEditText) EditText mEditText;
+    @BindView(R.id.productEditText) EditText mProductEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,8 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        String product = mProductEditText.getText().toString();
-        if (v == mFindButtonv) {
+        if (v == mFindButton) {
+            String product = mProductEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, ProductsActivity.class);
             intent.putExtra("product",product);
             startActivity(intent);
