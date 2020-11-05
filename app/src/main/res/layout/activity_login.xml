@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30dp"
-        android:background="#730511"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout">
@@ -51,9 +50,9 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Log in"
-            android:background="@color/teal_700"
+            android:background="@color/common_google_signin_btn_text_dark"
             android:layout_marginTop="15dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <TextView
             android:layout_width="wrap_content"
