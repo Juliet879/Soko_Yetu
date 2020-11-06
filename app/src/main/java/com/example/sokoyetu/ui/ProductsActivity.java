@@ -35,7 +35,7 @@ public class ProductsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_products);
+        setContentView(R.layout.activity_product);
 
         final Intent intent = getIntent();
         String product = intent.getStringExtra("product");
@@ -58,10 +58,10 @@ public class ProductsActivity extends AppCompatActivity {
                 data_product = response.body().getDatum();
                 mAdapter = new ProductListAdapter(ProductsActivity.this, data_product);
                 mRecyclerView.setAdapter(mAdapter);
-                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BookListActivity.this);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ProductsActivity.this);
                 mRecyclerView.setLayoutManager(layoutManager);
                 mRecyclerView.setHasFixedSize(true);
-                showGoogle_book();
+                showData_product();
             }
         }
 
