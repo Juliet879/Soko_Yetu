@@ -33,7 +33,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         mData_product = Parcels.unwrap(getIntent().getParcelableExtra("data_product"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
-        adapterViewPager = new ProductPagerAdapter(getSupportFragmentManager(), mRestaurants);
+        adapterViewPager = new ProductPagerAdapter(getSupportFragmentManager(), mData_product);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
     }

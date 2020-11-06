@@ -1,7 +1,13 @@
 package com.example.sokoyetu;
 
+import com.example.sokoyetu.models.Datum;
+
+import java.util.List;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -30,4 +36,9 @@ public class InfoClient {
         return retrofit.create(InfoApi.class);
     }
 
+    public List<Datum> processResults(Response response) {
+    }
+
+    public void findData_product(String product, Callback callback) {
+    }
 }

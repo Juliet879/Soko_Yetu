@@ -19,15 +19,17 @@ import com.example.sokoyetu.models.InfoBuySearchResponse;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ProductsActivity extends AppCompatActivity {
+    public static final String TAG = ProductListAdapter.class.getSimpleName();
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-    @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+//    @BindView(R.id.errorTextView) TextView mErrorTextView;
+//    @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
     private ProductListAdapter mAdapter;
     private List<Datum> data_product;
@@ -36,36 +38,38 @@ public class ProductsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
+        ButterKnife.bind(this);
 
-        final Intent intent = getIntent();
+        Intent intent = getIntent();
         String product = intent.getStringExtra("product");
-        intent.putExtra("product",product);
+        getData_product(product);
+    }
 
-        InfoApi client = InfoClient.getClient();
+    private void getData_product(String product){
+        final InfoClient infoClient = new InfoClient();
+        infoClient.findData_product(product, new Callback(){
 
-        Call<InfoBuySearchResponse> call = client.getProducts(book);
-
-        Call.enqueue(new Callback<InfoBuySearchResponse>() {
             @Override
-            public void onResponse(Call<InfoBuySearchResponse> call, Response<InfoBuySearchResponse> response) {
-               if (response.isSuccessful()){
-
-               }
+            public void onFailure(Call call, Throwable t) {
+                t.printStackTrace();
             }
 
             @Override
-            public void onFailure(Call<InfoBuySearchResponse> call, Throwable t) {
-                data_product = response.body().getDatum();
-                mAdapter = new ProductListAdapter(ProductsActivity.this, data_product);
-                mRecyclerView.setAdapter(mAdapter);
-                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ProductsActivity.this);
-                mRecyclerView.setLayoutManager(layoutManager);
-                mRecyclerView.setHasFixedSize(true);
-                showData_product();
+            public void onResponse(Call call, Response response) {
+                data_product = infoClient.processResults(response);
+                ProductsActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter = new ProductListAdapter(getApplicationContext(), data_product);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ProductsActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
+                    }
+                });
             }
-        }
 
-        }
-
+        });
+    }
 
 }

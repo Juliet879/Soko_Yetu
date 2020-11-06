@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sokoyetu.R;
 import com.example.sokoyetu.models.Datum;
+import com.example.sokoyetu.ui.ProductDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -54,7 +55,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         @BindView(R.id.productImageView) ImageView mProductImageView;
         @BindView(R.id.nameTextView) TextView mNameTextView;
         @BindView(R.id.priceTextView) TextView mPriceTextView;
-        @BindView(R.id.urlTextView) TextView mUrlTextView;
 
         private Context mContext;
 
@@ -68,7 +68,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         public void bindData_product(Datum data_product) {
             mNameTextView.setText(data_product.getName());
             mPriceTextView.setText(data_product.getPrice());
-            mUrlTextView.setText(data_product.getUrl());
             Picasso.get().load(data_product.getThumb()).into(mProductImageView);
         }
 
